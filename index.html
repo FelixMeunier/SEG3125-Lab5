@@ -8,9 +8,14 @@
 
     <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="scripts.js"></script>
 
     <!-- My own additional style sheet -->
     <link href="styles.css" rel="stylesheet" type="text/css">
@@ -18,7 +23,7 @@
 
 <body>
 
-	<div class="container" id="header">
+	<div class="container-fluid" id="header">
 		<div class="row">
 			<div class="col-sm my-auto">
 				<h1>Bicycle Repair +</h1>
@@ -31,17 +36,25 @@
 		</div>
 	</div>
 	
-	<div class="container" id="blank"><br><br><br><br></div>
 	
-	<div class="container" id="info">
-		<h2>What are we?</h2>
+	<div id="navbar" class="row rownav">
+	  <a href="#whatarewe"><img src="images/icons8-march-50.png"> What are we?</a>
+	  <a href="#whoarewe"><img src="images/icons8-person-50.png"> Who are we?</a>
+	  <a href="#wherearewe"><img src="images/icons8-marker-50.png"> Where are we?</a>
+	  <a href="#planyourvisit"><img src="images/icons8-calendar-50.png"> Plan your visit</a>
+	</div>
+	
+	<div class="container-fluid" id="blank"><br><br><br><br></div>
+	
+	<div class="container-fluid info" id="whatarewe">
+		<h2><img src="images/icons8-march-50.png"> What are we?</h2>
 		<p>Bicycle Repair + is a large bicycle workshop providing reparation and tune up services.<p>
 	</div>
 	
-	<div class="container" id="blank"><br><br><br><br></div>
+	<div class="container-fluid" id="blank"><br><br><br><br></div>
 	
-	<div class="container" id="info">
-		<h2>Who are we?</h2>
+	<div class="container-fluid info" id="whoarewe">
+		<h2><img src="images/icons8-person-50.png"> Who are we?</h2>
 		<div class="row">
 			<div class="col-sm">
 				<div class="card">
@@ -66,70 +79,121 @@
 		
 	</div>
 	
-	<div class="container" id="blank"><br><br><br><br></div>
+	<div class="container-fluid" id="blank"><br><br><br><br></div>
 	
-	<div class="container" id="info">
-		<h2>Where are we?</h2>
+	<div class="container-fluid info" id="wherearewe">
+		<h2><img src="images/icons8-marker-50.png"> Where are we?</h2>
 		<p>Bicycle Repair + is located at 1234 Montreal Road, Ottawa, On.<p>
 		<img class="img-fluid" src="images/map.png">
 	</div>
 	
-	<div class="container" id="blank"><br><br><br><br></div>
+	<div class="container-fluid" id="blank"><br><br><br><br></div>
 	
-	<div class="container" id="info">
-		<h2>Plan your visit</h2>
+	<div class="container-fluid info" id="planyourvisit">
+		<h2><img src="images/icons8-calendar-50.png"> Plan your visit</h2>
 		<br>
-		<div class="row">
-			<div class="col-sm left">
-				<h3>Services</h3><br>
-				<div class="checkbox">
-					<p><input type="checkbox" value=""> Tune Up: 25$</p>
-					<label>Covers: Headset, Brakes, Derailleurs, Tire, Spokes, Wheel and Chain</label>
-					<img class="img-fluid" src="images/tuneup.jpg"><br><br>
-				</div>
-				<div class="checkbox">
-					<p><input type="checkbox" value=""> Flat Tire: 20$</p>
-					<label>Covers tire and installation</label>
-					<img class="img-fluid" src="images/flattire.jpg"><br><br>
-				</div>
-				<div class="checkbox">
-					<p><input type="checkbox" value=""> Repair Bike: 50$</p>
-					<label>Covers all parts</label>
-					<img class="img-fluid white" src="images/repairbike.png">
-				</div>
+		<div class="container-fluid plan">
+			<h3><img src="images/icons8-wrench-50.png"> Services</h3><br>
+			<div class="checkbox">
+				<p><input type="checkbox" value=""> Tune Up: 25$</p>
+				<label>Covers: Headset, Brakes, Derailleurs, Tire, Spokes, Wheel and Chain</label><br>
+				<img class="img-fluid serviceimg" src="images/tuneup.jpg"><br><br>
 			</div>
-			<div class="col-sm middle">
-				<h3>Date and Time</h3><br>
-				<p>Please choose date and time</p>
-				<input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+			<div class="checkbox">
+				<p><input type="checkbox" value=""> Flat Tire: 20$</p>
+				<label>Covers tire and installation</label><br>
+				<img class="img-fluid serviceimg" src="images/flattire.jpg"><br><br>
 			</div>
-			<div class="col-sm right">
-				<h3>Contact Info</h3><br>
-				<form>
-					<p>Full Name</p>
-					<input type="text" class="form-control"><br>
-					<p>Phone number</p>
-					<input type="text" class="form-control"><br>
-					<p>Email Address</p>
-					<input type="email" class="form-control"><br>
-				</form>
+			<div class="checkbox">
+				<p><input type="checkbox" value=""> Repair Bike: 50$</p>
+				<label>Covers all parts</label><br>
+				<img class="img-fluid white serviceimg" src="images/repairbike.png">
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<div class="text-center">
-			<button type="button" class="btn btn-outline-primary">Submit</button>
+		
+		<div class="container-fluid top plan">	
+			<h3><img src="images/icons8-user-account-50.png"> Choose Mechanic</h3><br>
+			<p>Please choose your prefered mechanic</p>
+			
+			<div class="radio">
+				<p><input type="radio" name="mechanic" value=""> Bob Mechanic</p>
+			</div>
+			
+			<div class="radio">
+				<p><input type="radio" name="mechanic" value=""> John Mechanic</p>
+			</div>
+			
 		</div>
+		
+		<div class="container-fluid middle plan">	
+			<h3><img src="images/icons8-planner-50.png"> Date and Time</h3><br>
+			<p>Please choose date and time</p>
+			<input type="text" id="datepicker">
+		</div>
+		
+		<div class="container-fluid middle plan">
+			<h3><img src="images/icons8-pencil-50.png"> Contact Info</h3><br>
+			<form id="myform">
+				<p>Full Name</p>
+				<input type="text" class="form-control" required><br>
+				<p>Phone number (format: 111-111-1111)</p>
+				<input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" required class="form-control"><br>
+				<p>Email Address</p>
+				<input type="email" required class="form-control"><br>
+				<input type="submit" class="form-control validate">
+			</form>
+		</div>
+		
+		<div class="container-fluid plan">
+			<h3><img src="images/icons8-credit-card-50.png"> Payment <img src="images/icons8-help-24.png" data-toggle="tooltip" title="Payment information is requested but will only be charged in case of a last-minute cancellation."></h3><br>
+			<form>
+				<p>Cardholder Name</p>
+				<input type="text" class="form-control" required><br>
+				<p>Credit Card Number (format: 1111 1111 1111 1111)</p>
+				<input type="text" class="form-control" pattern="^\d{4} \d{4} \d{4} \d{4}$" required><br>
+				<p>Expiration Date</p>
+				<input type="text" class="form-control" required><br>
+				<p>CVV <img src="images/icons8-help-24.png" data-toggle="tooltip" title="This is the three-digit number located on the back of your credit card."></p>
+				<input type="text" class="form-control" required><br>
+				<input type="submit" class="form-control validate">
+			</form>
+		</div>
+	
 		<br>
 		<br>
 	</div>
 	
-	<div class="container" id="blank"><br><br><br><br></div>
+	<div class="container-fluid" id="blank"><br><br><br><br></div>
 	
-	<div class="container" id="info">
+	<div class="container-fluid info">
 	<br><h2>Website desinged by Felix Meunier</h2><br>
 	</div>
+	
+	<script>
+
+	//---Code from W3Schools---
+
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = function() {myFunction()};
+
+	// Get the navbar
+	var navbar = document.getElementById("navbar");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+		navbar.classList.add("sticky")
+	  } else {
+		navbar.classList.remove("sticky");
+	  }
+	}
+
+	//---End of code from W3Schools---
+
+	</script>
 	
 </body>
 
